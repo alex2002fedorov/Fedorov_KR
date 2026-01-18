@@ -49,9 +49,7 @@ services:
     networks:
       - security-net
     volumes:
-      # ИСПРАВЛЕННЫЙ ПУТЬ
       - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
-      - prometheus_data:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
@@ -70,20 +68,6 @@ services:
       - grafana_data:/var/lib/grafana
     depends_on:
       - prometheus
-    restart: unless-stopped
-
-  cadvisor:
-    image: gcr.io/cadvisor/cadvisor:latest
-    container_name: cadvisor
-    ports:
-      - "8080:8080"
-    networks:
-      - security-net
-    volumes:
-      - /:/rootfs:ro
-      - /var/run:/var/run:ro
-      - /sys:/sys:ro
-      - /var/lib/docker/:/var/lib/docker:ro
     restart: unless-stopped
 
 networks:
