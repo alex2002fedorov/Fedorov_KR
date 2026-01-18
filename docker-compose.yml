@@ -13,10 +13,6 @@ services:
     depends_on:
       - analyzer
       - manager
-    labels:
-      - "prometheus-job=gateway"
-    volumes:
-      - ./data:/app/data
     restart: unless-stopped
 
   analyzer:
@@ -31,10 +27,6 @@ services:
       - MANAGER_URL=http://manager:5002
     depends_on:
       - manager
-    labels:
-      - "prometheus-job=analyzer"
-    volumes:
-      - ./data:/app/data
     restart: unless-stopped
 
   manager:
@@ -47,8 +39,6 @@ services:
       - security-net
     volumes:
       - ./data:/app/data
-    labels:
-      - "prometheus-job=manager"
     restart: unless-stopped
 
   prometheus:
@@ -59,15 +49,12 @@ services:
     networks:
       - security-net
     volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      # ИСПРАВЛЕННЫЙ ПУТЬ
+      - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
       - prometheus_data:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
-      - '--web.console.libraries=/etc/prometheus/console_libraries'
-      - '--web.console.templates=/etc/prometheus/consoles'
-      - '--storage.tsdb.retention.time=200h'
-      - '--web.enable-lifecycle'
     restart: unless-stopped
 
   grafana:
@@ -79,10 +66,8 @@ services:
       - security-net
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin
-      - GF_USERS_ALLOW_SIGN_UP=false
     volumes:
       - grafana_data:/var/lib/grafana
-      - ./docker/grafana/provisioning:/etc/grafana/provisioning
     depends_on:
       - prometheus
     restart: unless-stopped
@@ -99,7 +84,6 @@ services:
       - /var/run:/var/run:ro
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
-      - /dev/disk/:/dev/disk:ro
     restart: unless-stopped
 
 networks:
