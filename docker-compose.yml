@@ -48,8 +48,9 @@ services:
       - "9090:9090"
     networks:
       - security-net
-    volumes:
-      - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    # УБРАТЬ эту строку - она вызывает ошибку в WSL2
+    # volumes:
+    #   - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
@@ -75,5 +76,5 @@ networks:
     driver: bridge
 
 volumes:
-  prometheus_data:
   grafana_data:
+  # Убрать prometheus_data, если не используется
