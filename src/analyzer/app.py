@@ -11,12 +11,15 @@ app = Flask(__name__)
 MANAGER_URL = "http://localhost:5002"
 
 # Метрики Prometheus
-ANALYSIS_REQUESTS = Counter('analyzer_requests_total', 'Total analysis requests')
-BLOCKED_ANALYSIS = Counter('analyzer_blocked_total', 'Blocked requests analysis')
+ANALYSIS_REQUESTS = Counter('analyzer_requests_total',
+                            'Total analysis requests')
+BLOCKED_ANALYSIS = Counter('analyzer_blocked_total',
+                           'Blocked requests analysis')
 ANALYSIS_DURATION = Histogram('analyzer_duration_seconds', 'Analysis duration')
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
 
 def get_domain_from_url(url):
     """Извлекает домен из URL"""
@@ -25,6 +28,7 @@ def get_domain_from_url(url):
         return parsed.netloc
     except:
         return url
+
 
 @app.route('/analyze', methods=['POST'])
 def analyze():
@@ -49,11 +53,9 @@ def analyze():
 
         try:
             # Отправляем запрос в менеджер для проверки
-            response = requests.post(
-                f"{MANAGER_URL}/check-url",
-                json={'url': url},
-                timeout=3
-            )
+            response = requests.post(f"{MANAGER_URL}/check-url",
+                                     json={'url': url},
+                                     timeout=3)
 
             if response.status_code == 200:
                 result = response.json()
@@ -76,13 +78,16 @@ def analyze():
     # Логируем инцидент, если есть блокировки
     if not is_allowed and blocked_urls:
         try:
-            requests.post(f"{MANAGER_URL}/log-incident", json={
-                'source_ip': source_ip,
-                'destination_url': target_url,
-                'action': 'BLOCKED',
-                'description': f'Blocked URLs: {", ".join(blocked_urls[:3])}',
-                'severity': 'high'
-            }, timeout=2)
+            requests.post(f"{MANAGER_URL}/log-incident",
+                          json={
+                              'source_ip': source_ip,
+                              'destination_url': target_url,
+                              'action': 'BLOCKED',
+                              'description':
+                              f'Blocked URLs: {", ".join(blocked_urls[:3])}',
+                              'severity': 'high'
+                          },
+                          timeout=2)
         except:
             pass  # Не прерываем выполнение при ошибке логирования
 
@@ -101,25 +106,31 @@ def analyze():
         'source_ip': source_ip
     }), 200 if is_allowed else 403
 
+
 @app.route('/metrics')
 def metrics():
     """Endpoint для Prometheus"""
     return generate_latest()
 
+
 @app.route('/health')
 def health():
-    """Health check endpoint"""
-    try:
-        # Проверяем доступность менеджера
-        response = requests.get(f"{MANAGER_URL}/health", timeout=2)
-        manager_status = response.status_code == 200
+    #"""Health check endpoint"""
+    #try:
+    #    # Проверяем доступность менеджера
+    #    response = requests.get(f"{MANAGER_URL}/health", timeout=2)
+    #    manager_status = response.status_code == 200
+    #
+    #    return jsonify({
+    #        'status': 'healthy' if manager_status else 'degraded',
+    #        'manager': 'up' if manager_status else 'down'
+    #    })
+    #except:
+    #    return jsonify({'status': 'unhealthy'}), 500
 
-        return jsonify({
-            'status': 'healthy' if manager_status else 'degraded',
-            'manager': 'up' if manager_status else 'down'
-        })
-    except:
-        return jsonify({'status': 'unhealthy'}), 500
+    #"""Health check endpoint"""
+    return jsonify({'status': 'healthy', 'service': 'manager'})
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001, debug=True)

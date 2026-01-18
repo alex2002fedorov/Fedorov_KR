@@ -165,7 +165,7 @@ def health():
             'status': 'unhealthy',
             'error': str(e),
             'service': 'gateway'
-        }), 200  # Всегда возвращаем 200 для health check
+        })
 
 
 if __name__ == '__main__':
