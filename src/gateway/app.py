@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, Response
 import requests
 import json
 import logging
-from prometheus_client import Counter, Histogram, Gauge, generate_latest
+from prometheus_client import Counter, Histogram, Gauge, generate_latest, CONTENT_TYPE_LATEST
 import time
 import re
 
@@ -147,7 +147,7 @@ def check():
 @app.route('/metrics')
 def metrics():
     """Endpoint для Prometheus"""
-    return generate_latest()
+    return Response(generate_latest(), mimetype=CONTENT_TYPE_LATEST)
 
 
 @app.route('/health')

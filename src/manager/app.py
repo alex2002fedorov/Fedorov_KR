@@ -1,8 +1,8 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Response
 import sqlite3
 from database import SecurityDatabase
 import logging
-from prometheus_client import generate_latest, Counter, Histogram, Gauge
+from prometheus_client import generate_latest, Counter, Histogram, Gauge, CONTENT_TYPE_LATEST
 import time
 
 app = Flask(__name__)
@@ -101,7 +101,7 @@ def get_incidents():
 @app.route('/metrics')
 def metrics():
     """Endpoint для Prometheus"""
-    return generate_latest()
+    return Response(generate_latest(), mimetype=CONTENT_TYPE_LATEST)
 
 
 @app.route('/health')
