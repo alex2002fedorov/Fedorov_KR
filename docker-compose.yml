@@ -38,7 +38,7 @@ services:
     networks:
       - security-net
     volumes:
-      - ./data:/app/data
+      - security_data:/app/data
     restart: unless-stopped
 
   prometheus:
@@ -48,12 +48,17 @@ services:
       - "9090:9090"
     networks:
       - security-net
-    # УБРАТЬ эту строку - она вызывает ошибку в WSL2
-    # volumes:
-    #   - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    volumes:
+      - prometheus_data:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=7d'
+      - '--web.enable-lifecycle'
+      - '--web.enable-remote-write-receiver'
+    configs:
+      - source: prometheus_config
+        target: /etc/prometheus/prometheus.yml
     restart: unless-stopped
 
   grafana:
@@ -65,16 +70,83 @@ services:
       - security-net
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_INSTALL_PLUGINS=grafana-piechart-panel
     volumes:
       - grafana_data:/var/lib/grafana
+    configs:
+      - source: grafana_datasources
+        target: /etc/grafana/provisioning/datasources/datasource.yml
+      - source: grafana_dashboards
+        target: /etc/grafana/provisioning/dashboards/dashboard.yml
+      - source: security_dashboard
+        target: /etc/grafana/provisioning/dashboards/security_dashboard.json
+    restart: unless-stopped
     depends_on:
       - prometheus
-    restart: unless-stopped
 
 networks:
   security-net:
     driver: bridge
 
 volumes:
+  security_data:
+  prometheus_data:
   grafana_data:
-  # Убрать prometheus_data, если не используется
+
+configs:
+  prometheus_config:
+    content: |
+      global:
+        scrape_interval: 15s
+        evaluation_interval: 15s
+
+      scrape_configs:
+        - job_name: 'gateway'
+          static_configs:
+            - targets: ['gateway:5000']
+          scrape_interval: 10s
+          metrics_path: '/metrics'
+          
+        - job_name: 'analyzer'
+          static_configs:
+            - targets: ['analyzer:5001']
+          scrape_interval: 10s
+          metrics_path: '/metrics'
+          
+        - job_name: 'manager'
+          static_configs:
+            - targets: ['manager:5002']
+          scrape_interval: 10s
+          metrics_path: '/metrics'
+          
+        - job_name: 'prometheus'
+          static_configs:
+            - targets: ['localhost:9090']
+
+  grafana_datasources:
+    content: |
+      apiVersion: 1
+      datasources:
+        - name: Prometheus
+          type: prometheus
+          access: proxy
+          url: http://prometheus:9090
+          isDefault: true
+          editable: true
+
+  grafana_dashboards:
+    content: |
+      apiVersion: 1
+      providers:
+        - name: 'default'
+          orgId: 1
+          folder: ''
+          type: file
+          disableDeletion: false
+          editable: true
+          options:
+            path: /etc/grafana/provisioning/dashboards
+
+  security_dashboard:
+    file: ./docker/grafana/provisioning/dashboards/security_dashboard.json
