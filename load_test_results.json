@@ -1,0 +1,818 @@
+{
+  "requests": [
+    {
+      "id": 3,
+      "url": "https://internal-api.local/users",
+      "status_code": 500,
+      "duration": 0.036704301834106445,
+      "timestamp": "2026-01-18T13:25:48.582753",
+      "success": false
+    },
+    {
+      "id": 1,
+      "url": "https://internal-api.local/users",
+      "status_code": 500,
+      "duration": 0.04156160354614258,
+      "timestamp": "2026-01-18T13:25:48.585555",
+      "success": false
+    },
+    {
+      "id": 6,
+      "url": "https://internal-api.local/users",
+      "status_code": 500,
+      "duration": 0.039923667907714844,
+      "timestamp": "2026-01-18T13:25:48.589784",
+      "success": false
+    },
+    {
+      "id": 9,
+      "url": "https://internal-api.local/users",
+      "status_code": 500,
+      "duration": 0.08262324333190918,
+      "timestamp": "2026-01-18T13:25:48.636909",
+      "success": false
+    },
+    {
+      "id": 10,
+      "url": "https://internal-api.local/users",
+      "status_code": 500,
+      "duration": 0.058408498764038086,
+      "timestamp": "2026-01-18T13:25:48.641302",
+      "success": false
+    },
+    {
+      "id": 12,
+      "url": "https://internal-api.local/users",
+      "status_code": 500,
+      "duration": 0.06081581115722656,
+      "timestamp": "2026-01-18T13:25:48.650702",
+      "success": false
+    },
+    {
+      "id": 14,
+      "url": "https://internal-api.local/users",
+      "status_code": 500,
+      "duration": 0.022346019744873047,
+      "timestamp": "2026-01-18T13:25:48.663778",
+      "success": false
+    },
+    {
+      "id": 5,
+      "url": "https://github.com/test/Test_KR_2",
+      "status_code": 422,
+      "duration": 0.3227987289428711,
+      "timestamp": "2026-01-18T13:25:48.870311",
+      "success": false
+    },
+    {
+      "id": 7,
+      "url": "https://github.com/test/Test_KR_2",
+      "status_code": 422,
+      "duration": 0.3527977466583252,
+      "timestamp": "2026-01-18T13:25:48.904308",
+      "success": false
+    },
+    {
+      "id": 17,
+      "url": "https://api.trusted-service.com/v1/data",
+      "status_code": 500,
+      "duration": 0.0965116024017334,
+      "timestamp": "2026-01-18T13:25:48.966935",
+      "success": false
+    },
+    {
+      "id": 8,
+      "url": "https://api.twitter.com/v2/tweets",
+      "status_code": 404,
+      "duration": 0.43196964263916016,
+      "timestamp": "2026-01-18T13:25:48.984714",
+      "success": false
+    },
+    {
+      "id": 18,
+      "url": "https://api.trusted-service.com/v1/data",
+      "status_code": 500,
+      "duration": 0.10643243789672852,
+      "timestamp": "2026-01-18T13:25:49.010882",
+      "success": false
+    },
+    {
+      "id": 19,
+      "url": "https://api.trusted-service.com/v1/data",
+      "status_code": 500,
+      "duration": 0.2716519832611084,
+      "timestamp": "2026-01-18T13:25:49.238699",
+      "success": false
+    },
+    {
+      "id": 20,
+      "url": "https://api.trusted-service.com/v1/data",
+      "status_code": 500,
+      "duration": 0.3126673698425293,
+      "timestamp": "2026-01-18T13:25:49.297583",
+      "success": false
+    },
+    {
+      "id": 2,
+      "url": "https://trusted-cdn.com/assets/image.jpg",
+      "status_code": 500,
+      "duration": 1.0234344005584717,
+      "timestamp": "2026-01-18T13:25:49.568488",
+      "success": false
+    },
+    {
+      "id": 23,
+      "url": "https://api.twitter.com/v2/tweets",
+      "status_code": 404,
+      "duration": 0.38036346435546875,
+      "timestamp": "2026-01-18T13:25:49.678070",
+      "success": false
+    },
+    {
+      "id": 15,
+      "url": "https://trusted-cdn.com/assets/image.jpg",
+      "status_code": 500,
+      "duration": 1.1932928562164307,
+      "timestamp": "2026-01-18T13:25:49.844105",
+      "success": false
+    },
+    {
+      "id": 21,
+      "url": "https://trusted-cdn.com/assets/image.jpg",
+      "status_code": 500,
+      "duration": 0.8522679805755615,
+      "timestamp": "2026-01-18T13:25:49.863295",
+      "success": false
+    },
+    {
+      "id": 24,
+      "url": "https://api.trusted-service.com/v1/data",
+      "status_code": 500,
+      "duration": 0.329601526260376,
+      "timestamp": "2026-01-18T13:25:49.898195",
+      "success": false
+    },
+    {
+      "id": 26,
+      "url": "https://malware-distribution.com/exploit.exe",
+      "status_code": 500,
+      "duration": 0.25036120414733887,
+      "timestamp": "2026-01-18T13:25:50.094618",
+      "success": false
+    },
+    {
+      "id": 4,
+      "url": "https://vk.com/api/messages",
+      "status_code": 0,
+      "duration": 0,
+      "timestamp": "2026-01-18T13:25:50.363895",
+      "success": false,
+      "error": "('Received response with content-encoding: gzip, but failed to decode it.', error('Error -3 while decompressing data: incorrect header check'))"
+    },
+    {
+      "id": 0,
+      "url": "https://vk.com/api/messages",
+      "status_code": 0,
+      "duration": 0,
+      "timestamp": "2026-01-18T13:25:50.409492",
+      "success": false,
+      "error": "('Received response with content-encoding: gzip, but failed to decode it.', error('Error -3 while decompressing data: incorrect header check'))"
+    },
+    {
+      "id": 11,
+      "url": "https://vk.com/api/messages",
+      "status_code": 0,
+      "duration": 0,
+      "timestamp": "2026-01-18T13:25:50.479471",
+      "success": false,
+      "error": "('Received response with content-encoding: gzip, but failed to decode it.', error('Error -3 while decompressing data: incorrect header check'))"
+    },
+    {
+      "id": 16,
+      "url": "https://vk.com/api/messages",
+      "status_code": 0,
+      "duration": 0,
+      "timestamp": "2026-01-18T13:25:50.488742",
+      "success": false,
+      "error": "('Received response with content-encoding: gzip, but failed to decode it.', error('Error -3 while decompressing data: incorrect header check'))"
+    },
+    {
+      "id": 13,
+      "url": "https://vk.com/api/messages",
+      "status_code": 0,
+      "duration": 0,
+      "timestamp": "2026-01-18T13:25:50.503443",
+      "success": false,
+      "error": "('Received response with content-encoding: gzip, but failed to decode it.', error('Error -3 while decompressing data: incorrect header check'))"
+    },
+    {
+      "id": 31,
+      "url": "https://api.trusted-service.com/v1/data",
+      "status_code": 500,
+      "duration": 0.11574482917785645,
+      "timestamp": "2026-01-18T13:25:50.525318",
+      "success": false
+    },
+    {
+      "id": 34,
+      "url": "https://internal-api.local/users",
+      "status_code": 500,
+      "duration": 0.029241561889648438,
+      "timestamp": "2026-01-18T13:25:50.534006",
+      "success": false
+    },
+    {
+      "id": 30,
+      "url": "https://github.com/test/Test_KR_2",
+      "status_code": 422,
+      "duration": 0.2524445056915283,
+      "timestamp": "2026-01-18T13:25:50.616406",
+      "success": false
+    },
+    {
+      "id": 37,
+      "url": "https://internal-api.local/users",
+      "status_code": 500,
+      "duration": 0.016544103622436523,
+      "timestamp": "2026-01-18T13:25:50.633054",
+      "success": false
+    },
+    {
+      "id": 38,
+      "url": "https://internal-api.local/users",
+      "status_code": 500,
+      "duration": 0.017501115798950195,
+      "timestamp": "2026-01-18T13:25:50.650738",
+      "success": false
+    },
+    {
+      "id": 29,
+      "url": "https://api.telegram.org/bot123/sendMessage",
+      "status_code": 404,
+      "duration": 0.6070606708526611,
+      "timestamp": "2026-01-18T13:25:50.702336",
+      "success": false
+    },
+    {
+      "id": 36,
+      "url": "https://github.com/test/Test_KR_2",
+      "status_code": 422,
+      "duration": 0.25837063789367676,
+      "timestamp": "2026-01-18T13:25:50.792516",
+      "success": false
+    },
+    {
+      "id": 32,
+      "url": "https://github.com/test/Test_KR_2",
+      "status_code": 422,
+      "duration": 0.34433770179748535,
+      "timestamp": "2026-01-18T13:25:50.823901",
+      "success": false
+    },
+    {
+      "id": 40,
+      "url": "https://malware-distribution.com/exploit.exe",
+      "status_code": 500,
+      "duration": 0.1414031982421875,
+      "timestamp": "2026-01-18T13:25:50.843891",
+      "success": false
+    },
+    {
+      "id": 35,
+      "url": "https://api.trusted-service.com/v1/data",
+      "status_code": 500,
+      "duration": 0.33557581901550293,
+      "timestamp": "2026-01-18T13:25:50.861095",
+      "success": false
+    },
+    {
+      "id": 39,
+      "url": "https://github.com/test/Test_KR",
+      "status_code": 422,
+      "duration": 0.2575094699859619,
+      "timestamp": "2026-01-18T13:25:50.908344",
+      "success": false
+    },
+    {
+      "id": 42,
+      "url": "https://api.trusted-service.com/v1/data",
+      "status_code": 500,
+      "duration": 0.09683656692504883,
+      "timestamp": "2026-01-18T13:25:50.920882",
+      "success": false
+    },
+    {
+      "id": 46,
+      "url": "https://internal-api.local/users",
+      "status_code": 500,
+      "duration": 0.02339029312133789,
+      "timestamp": "2026-01-18T13:25:50.944417",
+      "success": false
+    },
+    {
+      "id": 22,
+      "url": "https://vk.com/api/messages",
+      "status_code": 0,
+      "duration": 0,
+      "timestamp": "2026-01-18T13:25:51.071692",
+      "success": false,
+      "error": "('Received response with content-encoding: gzip, but failed to decode it.', error('Error -3 while decompressing data: incorrect header check'))"
+    },
+    {
+      "id": 48,
+      "url": "https://internal-api.local/users",
+      "status_code": 500,
+      "duration": 0.01814866065979004,
+      "timestamp": "2026-01-18T13:25:51.089943",
+      "success": false
+    },
+    {
+      "id": 49,
+      "url": "https://internal-api.local/users",
+      "status_code": 500,
+      "duration": 0.0172879695892334,
+      "timestamp": "2026-01-18T13:25:51.107331",
+      "success": false
+    },
+    {
+      "id": 44,
+      "url": "https://api.trusted-service.com/v1/data",
+      "status_code": 500,
+      "duration": 0.2729814052581787,
+      "timestamp": "2026-01-18T13:25:51.134211",
+      "success": false
+    },
+    {
+      "id": 50,
+      "url": "https://github.com/test/Test_KR_2",
+      "status_code": 422,
+      "duration": 0.2647228240966797,
+      "timestamp": "2026-01-18T13:25:51.372237",
+      "success": false
+    },
+    {
+      "id": 51,
+      "url": "https://malware-distribution.com/exploit.exe",
+      "status_code": 500,
+      "duration": 0.3008565902709961,
+      "timestamp": "2026-01-18T13:25:51.435195",
+      "success": false
+    },
+    {
+      "id": 53,
+      "url": "https://api.trusted-service.com/v1/data",
+      "status_code": 500,
+      "duration": 0.02570343017578125,
+      "timestamp": "2026-01-18T13:25:51.460994",
+      "success": false
+    },
+    {
+      "id": 52,
+      "url": "https://github.com/test/Test_KR",
+      "status_code": 422,
+      "duration": 0.3208277225494385,
+      "timestamp": "2026-01-18T13:25:51.693200",
+      "success": false
+    },
+    {
+      "id": 25,
+      "url": "https://vk.com/api/messages",
+      "status_code": 0,
+      "duration": 0,
+      "timestamp": "2026-01-18T13:25:51.708767",
+      "success": false,
+      "error": "('Received response with content-encoding: gzip, but failed to decode it.', error('Error -3 while decompressing data: incorrect header check'))"
+    },
+    {
+      "id": 28,
+      "url": "https://vk.com/api/messages",
+      "status_code": 0,
+      "duration": 0,
+      "timestamp": "2026-01-18T13:25:51.714359",
+      "success": false,
+      "error": "('Received response with content-encoding: gzip, but failed to decode it.', error('Error -3 while decompressing data: incorrect header check'))"
+    },
+    {
+      "id": 57,
+      "url": "https://internal-api.local/users",
+      "status_code": 500,
+      "duration": 0.015612363815307617,
+      "timestamp": "2026-01-18T13:25:51.730038",
+      "success": false
+    },
+    {
+      "id": 27,
+      "url": "https://vk.com/api/messages",
+      "status_code": 0,
+      "duration": 0,
+      "timestamp": "2026-01-18T13:25:51.797848",
+      "success": false,
+      "error": "('Received response with content-encoding: gzip, but failed to decode it.', error('Error -3 while decompressing data: incorrect header check'))"
+    },
+    {
+      "id": 43,
+      "url": "https://trusted-cdn.com/assets/image.jpg",
+      "status_code": 500,
+      "duration": 1.0234906673431396,
+      "timestamp": "2026-01-18T13:25:51.867499",
+      "success": false
+    },
+    {
+      "id": 60,
+      "url": "https://internal-api.local/users",
+      "status_code": 500,
+      "duration": 0.02123856544494629,
+      "timestamp": "2026-01-18T13:25:51.888885",
+      "success": false
+    },
+    {
+      "id": 47,
+      "url": "https://trusted-cdn.com/assets/image.jpg",
+      "status_code": 500,
+      "duration": 1.0406382083892822,
+      "timestamp": "2026-01-18T13:25:51.985205",
+      "success": false
+    },
+    {
+      "id": 33,
+      "url": "https://trusted-cdn.com/assets/image.jpg",
+      "status_code": 500,
+      "duration": 1.5144000053405762,
+      "timestamp": "2026-01-18T13:25:52.003233",
+      "success": false
+    },
+    {
+      "id": 58,
+      "url": "https://github.com/test/Test_KR_2",
+      "status_code": 422,
+      "duration": 0.28415632247924805,
+      "timestamp": "2026-01-18T13:25:52.014368",
+      "success": false
+    },
+    {
+      "id": 64,
+      "url": "https://api.trusted-service.com/v1/data",
+      "status_code": 500,
+      "duration": 0.03518819808959961,
+      "timestamp": "2026-01-18T13:25:52.049706",
+      "success": false
+    },
+    {
+      "id": 55,
+      "url": "https://api.twitter.com/v2/tweets",
+      "status_code": 404,
+      "duration": 0.37476134300231934,
+      "timestamp": "2026-01-18T13:25:52.068095",
+      "success": false
+    },
+    {
+      "id": 59,
+      "url": "https://github.com/test/Test_KR_2",
+      "status_code": 422,
+      "duration": 0.28611111640930176,
+      "timestamp": "2026-01-18T13:25:52.084022",
+      "success": false
+    },
+    {
+      "id": 66,
+      "url": "https://internal-api.local/users",
+      "status_code": 500,
+      "duration": 0.020253896713256836,
+      "timestamp": "2026-01-18T13:25:52.088569",
+      "success": false
+    },
+    {
+      "id": 56,
+      "url": "https://github.com/test/Test_KR_2",
+      "status_code": 422,
+      "duration": 0.42592334747314453,
+      "timestamp": "2026-01-18T13:25:52.134753",
+      "success": false
+    },
+    {
+      "id": 61,
+      "url": "https://github.com/test/Test_KR_2",
+      "status_code": 422,
+      "duration": 0.2528984546661377,
+      "timestamp": "2026-01-18T13:25:52.141897",
+      "success": false
+    },
+    {
+      "id": 65,
+      "url": "https://github.com/test/Test_KR_2",
+      "status_code": 422,
+      "duration": 0.2522609233856201,
+      "timestamp": "2026-01-18T13:25:52.302094",
+      "success": false
+    },
+    {
+      "id": 71,
+      "url": "https://internal-api.local/users",
+      "status_code": 500,
+      "duration": 0.018026113510131836,
+      "timestamp": "2026-01-18T13:25:52.320289",
+      "success": false
+    },
+    {
+      "id": 72,
+      "url": "https://internal-api.local/users",
+      "status_code": 500,
+      "duration": 0.01608896255493164,
+      "timestamp": "2026-01-18T13:25:52.336477",
+      "success": false
+    },
+    {
+      "id": 68,
+      "url": "https://github.com/test/Test_KR_2",
+      "status_code": 422,
+      "duration": 0.2579383850097656,
+      "timestamp": "2026-01-18T13:25:52.346601",
+      "success": false
+    },
+    {
+      "id": 67,
+      "url": "https://api.trusted-service.com/v1/data",
+      "status_code": 500,
+      "duration": 0.2640678882598877,
+      "timestamp": "2026-01-18T13:25:52.348198",
+      "success": false
+    },
+    {
+      "id": 62,
+      "url": "https://api.twitter.com/v2/tweets",
+      "status_code": 404,
+      "duration": 0.39722657203674316,
+      "timestamp": "2026-01-18T13:25:52.382600",
+      "success": false
+    },
+    {
+      "id": 75,
+      "url": "https://api.trusted-service.com/v1/data",
+      "status_code": 500,
+      "duration": 0.03583645820617676,
+      "timestamp": "2026-01-18T13:25:52.384137",
+      "success": false
+    },
+    {
+      "id": 63,
+      "url": "https://trusted-cdn.com/assets/image.jpg",
+      "status_code": 500,
+      "duration": 0.38346385955810547,
+      "timestamp": "2026-01-18T13:25:52.387122",
+      "success": false
+    },
+    {
+      "id": 78,
+      "url": "https://internal-api.local/users",
+      "status_code": 500,
+      "duration": 0.05885577201843262,
+      "timestamp": "2026-01-18T13:25:52.446630",
+      "success": false
+    },
+    {
+      "id": 70,
+      "url": "https://api.twitter.com/v2/tweets",
+      "status_code": 404,
+      "duration": 0.37863945960998535,
+      "timestamp": "2026-01-18T13:25:52.520644",
+      "success": false
+    },
+    {
+      "id": 73,
+      "url": "https://github.com/test/Test_KR_2",
+      "status_code": 422,
+      "duration": 0.26233601570129395,
+      "timestamp": "2026-01-18T13:25:52.598917",
+      "success": false
+    },
+    {
+      "id": 74,
+      "url": "https://github.com/test/Test_KR",
+      "status_code": 422,
+      "duration": 0.2611205577850342,
+      "timestamp": "2026-01-18T13:25:52.607816",
+      "success": false
+    },
+    {
+      "id": 41,
+      "url": "https://vk.com/api/messages",
+      "status_code": 0,
+      "duration": 0,
+      "timestamp": "2026-01-18T13:25:52.648681",
+      "success": false,
+      "error": "('Received response with content-encoding: gzip, but failed to decode it.', error('Error -3 while decompressing data: incorrect header check'))"
+    },
+    {
+      "id": 54,
+      "url": "https://trusted-cdn.com/assets/image.jpg",
+      "status_code": 500,
+      "duration": 1.2168655395507812,
+      "timestamp": "2026-01-18T13:25:52.677957",
+      "success": false
+    },
+    {
+      "id": 79,
+      "url": "https://malware-distribution.com/exploit.exe",
+      "status_code": 500,
+      "duration": 0.24601984024047852,
+      "timestamp": "2026-01-18T13:25:52.692749",
+      "success": false
+    },
+    {
+      "id": 77,
+      "url": "https://github.com/test/Test_KR_2",
+      "status_code": 422,
+      "duration": 0.3261394500732422,
+      "timestamp": "2026-01-18T13:25:52.710405",
+      "success": false
+    },
+    {
+      "id": 85,
+      "url": "https://internal-api.local/users",
+      "status_code": 500,
+      "duration": 0.01947331428527832,
+      "timestamp": "2026-01-18T13:25:52.712351",
+      "success": false
+    },
+    {
+      "id": 83,
+      "url": "https://malware-distribution.com/exploit.exe",
+      "status_code": 500,
+      "duration": 0.0907280445098877,
+      "timestamp": "2026-01-18T13:25:52.739494",
+      "success": false
+    },
+    {
+      "id": 45,
+      "url": "https://vk.com/api/messages",
+      "status_code": 0,
+      "duration": 0,
+      "timestamp": "2026-01-18T13:25:52.801520",
+      "success": false,
+      "error": "('Received response with content-encoding: gzip, but failed to decode it.', error('Error -3 while decompressing data: incorrect header check'))"
+    },
+    {
+      "id": 89,
+      "url": "https://malware-distribution.com/exploit.exe",
+      "status_code": 500,
+      "duration": 0.025013446807861328,
+      "timestamp": "2026-01-18T13:25:52.826611",
+      "success": false
+    },
+    {
+      "id": 90,
+      "url": "https://api.trusted-service.com/v1/data",
+      "status_code": 500,
+      "duration": 0.025931596755981445,
+      "timestamp": "2026-01-18T13:25:52.852653",
+      "success": false
+    },
+    {
+      "id": 81,
+      "url": "https://github.com/test/Test_KR_2",
+      "status_code": 422,
+      "duration": 0.2968473434448242,
+      "timestamp": "2026-01-18T13:25:52.895906",
+      "success": false
+    },
+    {
+      "id": 80,
+      "url": "https://api.twitter.com/v2/tweets",
+      "status_code": 404,
+      "duration": 0.37963151931762695,
+      "timestamp": "2026-01-18T13:25:52.900443",
+      "success": false
+    },
+    {
+      "id": 82,
+      "url": "https://github.com/test/Test_KR",
+      "status_code": 422,
+      "duration": 0.30074357986450195,
+      "timestamp": "2026-01-18T13:25:52.908831",
+      "success": false
+    },
+    {
+      "id": 69,
+      "url": "https://trusted-cdn.com/assets/image.jpg",
+      "status_code": 500,
+      "duration": 0.7865571975708008,
+      "timestamp": "2026-01-18T13:25:52.921413",
+      "success": false
+    },
+    {
+      "id": 84,
+      "url": "https://github.com/test/Test_KR_2",
+      "status_code": 422,
+      "duration": 0.2527458667755127,
+      "timestamp": "2026-01-18T13:25:52.930822",
+      "success": false
+    },
+    {
+      "id": 92,
+      "url": "https://api.trusted-service.com/v1/data",
+      "status_code": 500,
+      "duration": 0.038111209869384766,
+      "timestamp": "2026-01-18T13:25:52.934191",
+      "success": false
+    },
+    {
+      "id": 95,
+      "url": "https://internal-api.local/users",
+      "status_code": 500,
+      "duration": 0.02493143081665039,
+      "timestamp": "2026-01-18T13:25:52.946514",
+      "success": false
+    },
+    {
+      "id": 88,
+      "url": "https://github.com/test/Test_KR_2",
+      "status_code": 422,
+      "duration": 0.2532365322113037,
+      "timestamp": "2026-01-18T13:25:52.992846",
+      "success": false
+    },
+    {
+      "id": 93,
+      "url": "https://api.trusted-service.com/v1/data",
+      "status_code": 500,
+      "duration": 0.0991661548614502,
+      "timestamp": "2026-01-18T13:25:52.999807",
+      "success": false
+    },
+    {
+      "id": 86,
+      "url": "https://trusted-cdn.com/assets/image.jpg",
+      "status_code": 500,
+      "duration": 0.38052845001220703,
+      "timestamp": "2026-01-18T13:25:53.091045",
+      "success": false
+    },
+    {
+      "id": 91,
+      "url": "https://github.com/test/Test_KR_2",
+      "status_code": 422,
+      "duration": 0.26750779151916504,
+      "timestamp": "2026-01-18T13:25:53.120410",
+      "success": false
+    },
+    {
+      "id": 97,
+      "url": "https://github.com/test/Test_KR_2",
+      "status_code": 422,
+      "duration": 0.2591118812561035,
+      "timestamp": "2026-01-18T13:25:53.193570",
+      "success": false
+    },
+    {
+      "id": 99,
+      "url": "https://github.com/test/Test_KR_2",
+      "status_code": 422,
+      "duration": 0.2609837055206299,
+      "timestamp": "2026-01-18T13:25:53.253975",
+      "success": false
+    },
+    {
+      "id": 87,
+      "url": "https://api.telegram.org/bot123/sendMessage",
+      "status_code": 404,
+      "duration": 0.5956485271453857,
+      "timestamp": "2026-01-18T13:25:53.308124",
+      "success": false
+    },
+    {
+      "id": 76,
+      "url": "https://trusted-cdn.com/assets/image.jpg",
+      "status_code": 500,
+      "duration": 1.0532855987548828,
+      "timestamp": "2026-01-18T13:25:53.437011",
+      "success": false
+    },
+    {
+      "id": 94,
+      "url": "https://trusted-cdn.com/assets/image.jpg",
+      "status_code": 500,
+      "duration": 1.0133674144744873,
+      "timestamp": "2026-01-18T13:25:53.922353",
+      "success": false
+    },
+    {
+      "id": 96,
+      "url": "https://trusted-cdn.com/assets/image.jpg",
+      "status_code": 500,
+      "duration": 1.0144717693328857,
+      "timestamp": "2026-01-18T13:25:53.945433",
+      "success": false
+    },
+    {
+      "id": 98,
+      "url": "https://trusted-cdn.com/assets/image.jpg",
+      "status_code": 500,
+      "duration": 1.0169925689697266,
+      "timestamp": "2026-01-18T13:25:53.963650",
+      "success": false
+    }
+  ],
+  "errors": [],
+  "start_time": "2026-01-18T13:25:48.542335",
+  "end_time": "2026-01-18T13:25:53.964725"
+}

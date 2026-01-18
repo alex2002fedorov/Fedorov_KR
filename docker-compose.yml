@@ -1,0 +1,111 @@
+services:
+  gateway:
+    build:
+      context: .
+      dockerfile: docker/gateway/Dockerfile
+    ports:
+      - "5000:5000"
+    networks:
+      - security-net
+    environment:
+      - ANALYZER_URL=http://analyzer:5001/analyze
+      - MANAGER_URL=http://manager:5002
+    depends_on:
+      - analyzer
+      - manager
+    labels:
+      - "prometheus-job=gateway"
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+
+  analyzer:
+    build:
+      context: .
+      dockerfile: docker/analyzer/Dockerfile
+    ports:
+      - "5001:5001"
+    networks:
+      - security-net
+    environment:
+      - MANAGER_URL=http://manager:5002
+    depends_on:
+      - manager
+    labels:
+      - "prometheus-job=analyzer"
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+
+  manager:
+    build:
+      context: .
+      dockerfile: docker/manager/Dockerfile
+    ports:
+      - "5002:5002"
+    networks:
+      - security-net
+    volumes:
+      - ./data:/app/data
+    labels:
+      - "prometheus-job=manager"
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    networks:
+      - security-net
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    networks:
+      - security-net
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./docker/grafana/provisioning:/etc/grafana/provisioning
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    ports:
+      - "8080:8080"
+    networks:
+      - security-net
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+    restart: unless-stopped
+
+networks:
+  security-net:
+    driver: bridge
+
+volumes:
+  prometheus_data:
+  grafana_data:
