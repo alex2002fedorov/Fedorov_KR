@@ -1,8 +1,4 @@
 #!/usr/bin/env python3
-"""
-Главный файл для запуска системы безопасности в Replit
-Только две функции: Запуск сервисов и Запуск тестов
-"""
 import subprocess
 import sys
 import os

@@ -8,7 +8,7 @@ import re
 
 app = Flask(__name__)
 
-# Конфигурация - УПРОЩЕННАЯ
+# Конфигурация
 ANALYZER_URL = "http://localhost:5001/analyze"
 MANAGER_URL = "http://localhost:5002"
 
@@ -68,7 +68,6 @@ def after_request(response):
 
 @app.route('/proxy', methods=['POST'])
 def proxy():
-    """Упрощенный прокси-эндпоинт - только для демонстрации"""
     try:
         data = request.json
         if not data:
@@ -79,7 +78,6 @@ def proxy():
         if not target_url:
             return jsonify({'error': 'target_url is required'}), 400
 
-        # Просто проверяем URL через Manager
         try:
             check_response = requests.post(f"{MANAGER_URL}/check-url",
                                            json={'url': target_url},
@@ -95,7 +93,6 @@ def proxy():
                         'blocked': True
                     }), 403
 
-                # В упрощенной версии просто возвращаем успех
                 return jsonify({
                     'success': True,
                     'url': target_url,
@@ -120,7 +117,6 @@ def proxy():
 
 @app.route('/check', methods=['POST'])
 def check():
-    """Прямая проверка URL через Gateway"""
     data = request.json
     url = data.get('url', '')
 
@@ -152,9 +148,7 @@ def metrics():
 
 @app.route('/health')
 def health():
-    """Health check endpoint - упрощенный"""
     try:
-        # Просто проверяем, что Flask работает
         return jsonify({
             'status': 'healthy',
             'service': 'gateway',
@@ -170,4 +164,4 @@ def health():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000,
-            debug=False)  # debug=False для стабильности
+            debug=False)

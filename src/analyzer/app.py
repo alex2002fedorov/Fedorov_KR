@@ -115,20 +115,6 @@ def metrics():
 
 @app.route('/health')
 def health():
-    #"""Health check endpoint"""
-    #try:
-    #    # Проверяем доступность менеджера
-    #    response = requests.get(f"{MANAGER_URL}/health", timeout=2)
-    #    manager_status = response.status_code == 200
-    #
-    #    return jsonify({
-    #        'status': 'healthy' if manager_status else 'degraded',
-    #        'manager': 'up' if manager_status else 'down'
-    #    })
-    #except:
-    #    return jsonify({'status': 'unhealthy'}), 500
-
-    #"""Health check endpoint"""
     return jsonify({'status': 'healthy', 'service': 'manager'})
 
 
